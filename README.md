@@ -10,6 +10,11 @@ Built with:
 
 ---
 
+## ⚠️ Disclaimer
+This tool is provided for educational and personal use. The author is not responsible for any misuse or illegal activities carried out using this software. Please ensure you comply with local laws and the terms of service of your media providers.
+
+---
+
 ## ✨ Features
 
 - `/movie <name>` — Search and add a movie via **Radarr**
