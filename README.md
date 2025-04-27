@@ -1,53 +1,50 @@
-📚 Discord Media Request Bot
-A Discord bot that lets users easily search for Movies, TV Shows, and Books and add them directly to your Radarr, Sonarr, and Readarr servers — right from Discord!
+# 📚 Discord Media Request Bot
+
+A Discord bot that lets users easily **search for Movies, TV Shows, and Books** and add them directly to your **Radarr**, **Sonarr**, and **Readarr** servers — right from Discord!
 
 Built with:
+- Node.js
+- Discord.js v14
+- Axios
+- Docker + Docker Compose
 
-Node.js
+---
 
-Discord.js v14
+## ✨ Features
 
-Axios
+- `/movie <name>` — Search and add a movie via **Radarr**
+- `/tv <name>` — Search and add a TV show via **Sonarr**
+- `/book <name>` — Search and add a book via **Readarr**
+- Interactive buttons to confirm or cancel requests
+- Clean slash command interface
+- Full Docker container support
+- Designed for easy deployment with Docker Compose
 
-Docker + Docker Compose
+---
 
-✨ Features
-/movie <name> — Search and add a movie via Radarr
+## 🛠 Requirements
 
-/tv <name> — Search and add a TV show via Sonarr
+- Docker
+- Docker Compose
+- Existing Radarr, Sonarr, and Readarr servers (preferably on the same Docker network)
+- A Discord Bot Token (create one at the [Discord Developer Portal](https://discord.com/developers/applications))
 
-/book <name> — Search and add a book via Readarr
+---
 
-Interactive buttons to confirm or cancel requests
+## 📂 Setup Instructions
 
-Clean slash command interface
+### 1. Clone the repository
 
-Full Docker container support
-
-Designed for easy deployment with Docker Compose
-
-🛠 Requirements
-Docker
-
-Docker Compose
-
-Existing Radarr, Sonarr, and Readarr servers (preferably on the same Docker network)
-
-A Discord Bot Token (create one at the Discord Developer Portal)
-
-📂 Setup Instructions
-1. Clone the repository
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/yourusername/discord-media-request-bot.git
 cd discord-media-request-bot
-2. Create a .env file
-In the project root, create a file named .env with:
+```
 
-env
-Copy
-Edit
+### 2. Create a `.env` file
+
+In the project root, create a file named `.env` with:
+
+```env
 DISCORD_TOKEN=your_discord_bot_token
 CLIENT_ID=your_discord_client_id
 
@@ -61,29 +58,33 @@ READARR_API_KEY=your_readarr_api_key
 READARR_URL=http://readarr:8787/api/v1
 
 READARR_BOOK_QUALITY_PROFILE_ID=1
-Note: Use container names (radarr, sonarr, readarr) instead of localhost when running in Docker.
+```
 
-3. Build and run with Docker Compose
-bash
-Copy
-Edit
+> **Note:** Use container names (`radarr`, `sonarr`, `readarr`) instead of `localhost` when running in Docker.
+
+### 3. Build and run with Docker Compose
+
+```bash
 docker compose up -d --build
+```
+
 To view live bot logs:
 
-bash
-Copy
-Edit
+```bash
 docker compose logs -f media-request-bot
+```
+
 To stop and remove containers:
 
-bash
-Copy
-Edit
+```bash
 docker compose down
-🐳 Docker Compose Example
-yaml
-Copy
-Edit
+```
+
+---
+
+## 🐳 Docker Compose Example
+
+```yaml
 version: '3.8'
 
 services:
@@ -151,25 +152,36 @@ services:
 
 networks:
   media:
-🛡️ Security Notice
-Do not commit your real .env to GitHub.
+```
 
-Add .env to your .gitignore:
+---
 
-bash
-Copy
-Edit
+## 🛡️ Security Notice
+
+- **Do not commit** your real `.env` to GitHub.  
+- Add `.env` to your `.gitignore`:
+
+```gitignore
 .env
 node_modules
-✨ Future Improvements
-Plex integration for auto-library refresh
+```
 
-Support for additional media servers
+---
 
-Web dashboard for request management
+## ✨ Future Improvements
 
-📜 License
-This project is open-source under the MIT License.
+- Plex integration for auto-library refresh
+- Support for additional media servers
+- Web dashboard for request management
 
-❤️ Credits
+---
+
+## 📜 License
+
+This project is open-source under the [MIT License](LICENSE).
+
+---
+
+## ❤️ Credits
+
 Built with love to make managing media libraries easier through Discord!
